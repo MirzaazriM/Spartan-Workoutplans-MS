@@ -1,0 +1,20 @@
+# home
+root:
+    path: /
+    defaults:
+        resource: "landing"
+    methods: [GET, POST]
+    
+workoutplans:
+    path: /{resource}{slash}
+    requirements:
+        resource: "workoutplans"
+        slash: "[/]{0,1}"
+    methods: [GET, POST, PUT, DELETE]
+
+actionincluded:
+    path: /{resource}{slash}{action}
+    requirements:
+        resource: "workoutplans"
+        slash: "[/]{0,1}"
+    methods: [GET, POST, PUT, DELETE]
